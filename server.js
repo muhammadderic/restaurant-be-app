@@ -1,7 +1,15 @@
 const express = require("express");
 const cors = require("cors");
+const dotenv = require("dotenv");
 
 const authRouter = require("./routes/authRoutes");
+const connectDB = require("./config/db");
+
+// Env variables configuration
+dotenv.config();
+
+// Connect to db
+connectDB();
 
 // Express instance
 const app = express();
